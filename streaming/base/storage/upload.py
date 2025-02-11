@@ -674,6 +674,7 @@ class HFUploader(CloudUploader):
             with self.fs.open(remote_filename, 'wb') as f:
                 with open(local_filename, 'rb') as data:
                     f.write(data.read())
+            self.clear_local(local=local_filename)
 
         _upload_file()
 
